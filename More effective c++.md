@@ -1,6 +1,6 @@
-More effective c++
+MORE EFFECTIVE C++
 
-<!-- Pointers and references -->
+//POINTERS AND REFERENCES 
 
 References must always refer to an object
 If by any chance the object could be null, use a pointer instead.
@@ -45,7 +45,7 @@ Use references when you know you have something to refer to and you will never w
 They are appropriate when implementing operators whose syntactic requirements make the use of pointers undesirable
 
 
-<!-- Casts -->
+//CASTS
 
 Avoid C-style casts and go-to 
 c-style casts are dangerous since they allow you to cast one type to any other type 
@@ -97,7 +97,7 @@ Avoid casting function pointers
 There is no easy way to emulate the behaviour of dynamic cast 
 however, there are libraries the provide functions to perform safe inheritance based casts for you 
 
-<!-- inheritance -->
+//INHERITANCE
 Derived classes usually have more members than their base class so derived class objects are usually larger than baseclass objects 
 
 Polymorphism and pointer arithmetic dont mix 
@@ -106,7 +106,7 @@ Array operations almost always involve pointer arithmetic
 You should design your software so that concrete classes never inherit from one another
 there are many benefits in following this rule
 
-<!-- Constructors -->
+//CONSTRUCTORS
 constructors guarantee that objects are initialized 
 
 classes that lack default constructors are ineligible for use with many template-based container classes 
@@ -118,7 +118,7 @@ don't allow exceptions to propagate out of the constructor
 if a member may throw on initialization, use smart pointers 
 to manage the resource to avoid memory leaks 
 
-<!-- Destructors -->
+//DESTRUCTORS
 prevent exceptions from leaving destructors
 
 destructors are called when an object is destroyed under normal conditions eg when it goes out of scope or when the object is explicity deleted
@@ -138,7 +138,7 @@ if an exception is thrown from a destructor and is not caught there, then the de
 prevents terminate from being called and it helps ensure that destructors accomplish everything they are supposed to do
 
 
-<!-- Operators -->
+//OPERATORS
 Single argument ocnstructors and implicit conversion operators are troublesome since there is no source coude to show the calls
 
 Be wary of user defined conversion functions
@@ -170,7 +170,7 @@ in order to prevent the one argument ocnstructor from being called indiscriminat
 
  the compiler will not permit two implicit ocnversions in a row only one is permited 
 
- <!-- Proxy objects -->
+ //PROXY OBJETS 
  proxy objects are objects that stand for something else 
  see the array template class example on page 61 
  the advantage of proxy objects is that they give us control over aspects of software behaviour for example, implicit type conversions 
@@ -179,7 +179,7 @@ in order to prevent the one argument ocnstructor from being called indiscriminat
 
  only provide conversion functions if you are sure you want them
 
- <!-- prefix postfix increment and decrement operators -->
+ //PREFIX POSTFIX INCREMENT AND DECREMENT OPERATORS 
  prefix and postfix return diferent types 
  prefix forms return a reference 
  postfix forms return a const object
@@ -199,7 +199,7 @@ in order to prevent the one argument ocnstructor from being called indiscriminat
 
  only overload postfix if you really need the postfix behaviour 
 
-<!-- &&, ||, or , -->
+//&&, ||, or ,
 never overload 
 
 c++ uses short circuit evaluation of boolean expressions
@@ -207,16 +207,20 @@ once the truth or falsehood of an expression has been determines, evaluation of 
 
 The purpose of operator overloading is to make programs easier to read, write, and understand
 
-<!-- new and delete -->
+//NEW AND DELETE 
 new only does two things 
 allocates enough memory for the object
 calls the constructor to initialize the object in the memory that was allocated 
-
+ 
 operator new can raise an exceptions if it fails to allocate enough memory for the object.
 
 c++ desstroys only fully constructed objects, and an object isint fully constructoed until its constructor has run to completion
 
-<!-- operator new declaration -->
+to avoid resource leaks every dynamic allocation must be matched by an equal and opposit deallocation.
+
+delete is a built in operator 
+
+//OPERATOR NEW DECLARATION 
 “void * operator new(size_t size);”
 
 returns a pointer to raw uninitialized memory
@@ -234,12 +238,7 @@ use the new library
 if you want to create an object on the heap, use new operator
 it both allocates memory and calls a constructor for the object 
 
-<!-- delete -->
-to avoid resource leaks every dynamic allocation must be matched by an equal and opposit deallocation.
-
-delete is a built in operator 
-
-<!-- Exceptions -->
+//EXCEPTIONS
 replicated code is annoying, difficult to maintain, and feels wrong
 
 exceptions can be passed by value, reference, or by pointer
@@ -281,7 +280,7 @@ catching values and pointers is generally a bad idea
     eg, a catch clause taking a const void* pointer will catch an exception of any pointer type
 never put a catch clause for a base class before a catch clause for a derived class 
 
-<!-- smart pointers -->
+SMART POINTERS
 objects that act like pointers but do more are called smart pointers 
 
 auto pointer takes a heap allocated object in its constructor 
@@ -312,14 +311,12 @@ you eliminate the need to manually deallocate resources in destructors, and you 
 smart pointers improve the readability of the code 
 smart pointrs are robust in the face of exceptions
 
-<!-- initialoizer lists -->
+//INITIALOIZER LISTS
 initializer lists only allow expressions
 not statements 
 you cant try catch in an initializeer list 
 you cant if else chain in an initializer list you need to use arithmatic construct instead
 
-<!-- Copy constructors -->
+//COPY CONSTRUCTORS
 copies are always made on an objects static type 
 however, there are techniques that lets you make copies on the basis of an objects dynamic type
-
-<!--  -->
