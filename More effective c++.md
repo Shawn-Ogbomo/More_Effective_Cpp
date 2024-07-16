@@ -320,3 +320,36 @@ you cant if else chain in an initializer list you need to use arithmatic constru
 //COPY CONSTRUCTORS
 copies are always made on an objects static type 
 however, there are techniques that lets you make copies on the basis of an objects dynamic type
+
+
+//LAZY EVALUATION
+Writing your classes in such a way that they defer 
+computations until the results of those computations are 
+required 
+
+Eager evaluation: (Don't make coppies of objects 
+if they're not used)
+
+Saves cost of a call to new and the expense of copying anything
+
+use someone else's copy as long as you can get away with it
+
+* in some application areas, you can ofter get away with it forever
+
+to mutate objects despite their constness within any member function, use the mutable qualifier
+
+If your vendors don't support it use the fake {this}
+approach 
+
+* create a pointer to non const that points to the same 
+* object as this does. When you want to modify a data member,
+* you access it through the fake this pointer
+
+*Avoids*
+*Paltry copying of objects*
+*Distinguish reads from writes using operator[]*
+*To avoid paltry reads from databases*
+*Avoid paltry numerical computations*
+
+*Lazy evaluation is only useful when there's a reasonable chance your software will be asked to perform computations that can be avoided.*
+
