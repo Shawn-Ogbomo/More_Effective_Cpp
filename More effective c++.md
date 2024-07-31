@@ -360,3 +360,14 @@ _LAZY EVALUATION_
 
 *Lazy evaluation is only useful when there's a reasonable chance your software will be asked to perform computations that can be avoided.*
 
+_Over Eager Evaluation_
+
+* improves the efficiency of programs when you must support operations whose results are almost always needed or whose results are often needed more than once 
+
+* doing things before you are asked to do them
+
+* cache values that have already been computed and are likely to be used again 
+
+* Use local cache to replace comparatively expensive database queries with comparitively inexpensive lookups in an in-memory data structure. 
+
+* Locality of reference phenomenon: if data in one place is requested. It is quite common to want nearby data too.
