@@ -223,7 +223,7 @@ _NEW AND DELETE_
 
     to avoid resource leaks every dynamic allocation must be matched by an equal and opposit deallocation.
 
-    delete is a built in operator 
+    delete is a built in operator
 
 _OPERATOR NEW DECLARATION_
 *   “void * operator new(size_t size);”
@@ -256,7 +256,7 @@ _EXCEPTIONS_
     even if the catch block catches the exception by reference,
     only the copy of the object is mutable not the original
 
-    objects static stypes are thrown, not their dynamic type 
+    objects static types are thrown, not their dynamic type 
     however there are techniques to bypass this 
 
     the compiler only cares about the objects static type
@@ -333,7 +333,7 @@ _LAZY EVALUATION_
 *   Writing your classes in such a way that they defer 
     computations until the results of those computations are 
     required 
-
+k
     Eager evaluation: (Don't make coppies of objects 
     if they're not used)
 
@@ -371,3 +371,6 @@ _Over Eager Evaluation_
 * Use local cache to replace comparatively expensive database queries with comparitively inexpensive lookups in an in-memory data structure. 
 
 * Locality of reference phenomenon: if data in one place is requested. It is quite common to want nearby data too.
+
+_temporary_ 
+object local to a function
