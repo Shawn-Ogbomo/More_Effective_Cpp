@@ -120,6 +120,8 @@ _CONSTRUCTORS_
     if a member may throw on initialization, use smart pointers 
     to manage the resource to avoid memory leaks 
 
+    vitual constructors create various objects depending on the supplied information
+
 _DESTRUCTORS_
 *   prevent exceptions from leaving destructors
 
@@ -374,3 +376,12 @@ _Over Eager Evaluation_
 
 _temporary_ 
 object local to a function
+
+_NAMESPACES_
+* prevents name conflicts
+
+* anything that can be declared in a global scope is declarable within a namespace.
+    - classes, structs, functions, variables, type-defs, etc..
+
+* namespaces don't contain access specifiers
+
