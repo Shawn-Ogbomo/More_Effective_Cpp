@@ -176,7 +176,7 @@ _OPERATORS_
 
  _PROXY OBJETS_
 
- *  roxy objects are objects that stand for something else 
+ *  proxy objects are objects that stand for something else 
     see the array template class example on page 61 
     the advantage of proxy objects is that they give us control over aspects of software behaviour for example, implicit type conversions 
 
@@ -319,7 +319,7 @@ _SMART POINTERS_
     smart pointers improve the readability of the code 
     smart pointrs are robust in the face of exceptions
 
-_INITIALOIZER LISTS_
+_INITIALIZER LISTS_
 
 *    initializer lists only allow expressions
     not statements 
